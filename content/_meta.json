@@ -1,0 +1,18 @@
+{
+  "index": {
+    "title": "Home",
+    "type": "page"
+  },
+  "getting-started": {
+    "title": "Getting Started",
+    "type": "page"
+  },
+  "features": {
+    "title": "Features",
+    "type": "page"
+  },
+  "deployment": {
+    "title": "Deployment",
+    "type": "page"
+  }
+}

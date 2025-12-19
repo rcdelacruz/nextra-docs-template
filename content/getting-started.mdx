@@ -1,0 +1,126 @@
+# Getting Started
+
+Learn how to set up and customize your documentation site.
+
+## Installation
+
+Clone this template and install dependencies:
+
+```bash
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+npm install
+```
+
+## Development
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Your site will be available at [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+
+```
+your-project/
+├── app/
+│   ├── layout.jsx          # Main layout with navbar/footer
+│   ├── globals.css         # Global styles
+│   └── [[...mdxPath]]/     # Dynamic route handler
+├── content/
+│   ├── _meta.json          # Navigation configuration
+│   ├── index.mdx           # Homepage
+│   └── *.mdx               # Your documentation pages
+├── mdx-components.jsx      # MDX components configuration
+├── next.config.mjs         # Next.js configuration
+├── package.json
+└── tailwind.config.js
+```
+
+## Adding Content
+
+### Create a New Page
+
+1. Create a new `.mdx` file in the `content/` folder:
+
+```mdx filename="content/my-page.mdx"
+# My New Page
+
+This is my new documentation page with **markdown** support.
+
+## Code Examples
+
+\`\`\`javascript
+console.log('Hello, world!')
+\`\`\`
+```
+
+2. Add it to `content/_meta.json`:
+
+```json filename="content/_meta.json"
+{
+  "index": "Home",
+  "getting-started": "Getting Started",
+  "my-page": "My New Page"
+}
+```
+
+### Organizing with Folders
+
+Create nested documentation:
+
+```
+content/
+├── _meta.json
+├── index.mdx
+└── guides/
+    ├── _meta.json
+    ├── index.mdx
+    ├── quick-start.mdx
+    └── advanced.mdx
+```
+
+## Customization
+
+### Update Metadata
+
+Edit `app/layout.jsx` to customize:
+- Site title and description
+- Navbar logo and project link
+- Footer content
+- Repository URL for "Edit this page" links
+
+### Change Colors
+
+To customize colors, edit the CSS variables in `app/globals.css`.
+
+### Configure Navigation
+
+Edit `content/_meta.json` to control sidebar navigation:
+
+```json
+{
+  "index": {
+    "title": "Home",
+    "type": "page"
+  },
+  "docs": {
+    "title": "Documentation",
+    "type": "page"
+  },
+  "github": {
+    "title": "GitHub",
+    "type": "page",
+    "href": "https://github.com/yourusername/your-repo",
+    "newWindow": true
+  }
+}
+```
+
+## Next Steps
+
+- [Features](/features) - Explore all available features
+- [Deployment](/deployment) - Deploy to GitHub Pages

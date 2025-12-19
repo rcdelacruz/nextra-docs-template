@@ -1,0 +1,32 @@
+{
+  "name": "nextra-docs-template",
+  "version": "1.0.0",
+  "description": "A beautiful documentation template built with Nextra and Next.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && pagefind --site out --output-path out/_pagefind",
+    "start": "npx serve out",
+    "export": "next build"
+  },
+  "keywords": [
+    "nextra",
+    "documentation",
+    "nextjs",
+    "docs",
+    "template"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "next": "^16.0.10",
+    "nextra": "^4.6.1",
+    "nextra-theme-docs": "^4.6.1",
+    "pagefind": "^1.4.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
+}
