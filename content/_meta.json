@@ -7,6 +7,10 @@
     "title": "Getting Started",
     "type": "page"
   },
+  "guides": {
+    "title": "Guides",
+    "type": "page"
+  },
   "features": {
     "title": "Features",
     "type": "page"

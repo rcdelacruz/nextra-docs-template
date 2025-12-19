@@ -1,0 +1,51 @@
+---
+title: Configuration
+description: Configure your documentation site
+---
+
+# Configuration
+
+Learn how to configure your Nextra documentation site.
+
+## Site Metadata
+
+Update the metadata in `app/layout.jsx`:
+
+```jsx
+export const metadata = {
+  title: {
+    template: '%s – Your Project Name',
+    default: 'Your Project Name'
+  },
+  description: 'Your project description goes here',
+}
+```
+
+## Navigation
+
+Edit `content/_meta.json` to customize your navigation structure:
+
+```json
+{
+  "index": "Home",
+  "getting-started": "Getting Started",
+  "guides": "Guides",
+  "features": "Features"
+}
+```
+
+## Theme Colors
+
+Customize theme colors in `app/layout.jsx`:
+
+```jsx
+:root {
+  --nextra-primary-hue: 15 !important;
+  --nextra-primary-saturation: 55.6% !important;
+  --nextra-primary-lightness: 52.4% !important;
+}
+```
+
+## Next Steps
+
+- [Customize the styling](/guides/customization)

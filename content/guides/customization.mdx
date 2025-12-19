@@ -1,0 +1,53 @@
+---
+title: Customization
+description: Customize your documentation site
+---
+
+# Customization
+
+Make the template your own with these customization options.
+
+## Logo
+
+Replace the logo in `app/layout.jsx`:
+
+```jsx
+const navbar = (
+  <Navbar
+    logo={
+      <span style={{ fontWeight: 600, fontSize: '1rem' }}>
+        Your Project Name
+      </span>
+    }
+  >
+    <ThemeToggle />
+  </Navbar>
+)
+```
+
+## Footer
+
+Customize the footer in `app/layout.jsx`:
+
+```jsx
+const footer = (
+  <Footer>
+    <div>
+      <span>MIT {new Date().getFullYear()} © Your Project Name</span>
+    </div>
+  </Footer>
+)
+```
+
+## Favicon
+
+Replace `/public/icon.svg` with your own favicon.
+
+## Custom Styles
+
+Add custom styles in `app/globals.css` or create new CSS files.
+
+## Previous Steps
+
+- [Installation](/guides/installation)
+- [Configuration](/guides/configuration)
