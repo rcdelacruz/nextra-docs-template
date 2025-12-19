@@ -495,7 +495,7 @@ footer > div {
 .nextra-toc li a {
   color: rgb(var(--text-200)) !important;
   background-color: transparent !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   transition: color 0.15s ease !important;
   font-weight: 400 !important;
 }
@@ -503,12 +503,12 @@ footer > div {
 /* Default TOC link styles - Dark mode */
 .dark .nextra-toc a,
 .dark .nextra-toc li a {
-  color: rgb(112, 112, 112) !important; /* gray-500 */
+  color: rgb(144, 144, 144) !important; /* gray-500 */
   background-color: transparent !important;
 }
 
 .dark .nextra-toc li {
-  color: rgb(112, 112, 112) !important;
+  color: rgb(144, 144, 144) !important;
 }
 
 /* Active TOC link - Light mode */
@@ -518,7 +518,7 @@ footer > div {
 .nextra-toc a[class*="x:text-primary"],
 .nextra-toc a[class*="x:bg-primary"] {
   color: hsl(var(--accent-main-100)) !important;
-  background-color: hsl(var(--accent-main-100) / 0.1) !important;
+  /* background-color: hsl(var(--accent-main-100) / 0.1) !important; */
   font-weight: 600 !important;
 }
 
@@ -529,7 +529,7 @@ footer > div {
 .dark .nextra-toc a[class*="x:text-primary"],
 .dark .nextra-toc a[class*="x:bg-primary"] {
   color: rgb(212, 162, 127) !important; /* accent color */
-  background-color: rgba(212, 162, 127, 0.1) !important;
+  /* background-color: rgba(212, 162, 127, 0.1) !important; */
   font-weight: 600 !important;
 }
 
