@@ -9,10 +9,12 @@ A beautiful, feature-rich documentation template built with [Nextra](https://nex
 ## Features
 
 - ✨ **Beautiful Design** - Clean, modern design with perfect typography
-- 🌓 **Dark Mode** - Fully supports dark mode with custom accent colors
+- 🌓 **Custom Theme Toggle** - Simple light/dark mode toggle in navbar (no dropdown, no system mode)
 - 🔍 **Search** - Built-in search powered by Pagefind
 - 📱 **Mobile Responsive** - Works perfectly on all devices
 - 🎯 **TOC Highlighting** - Table of contents automatically highlights on scroll
+- 📌 **Sticky Footer** - Smaller, always-visible footer at bottom
+- 🗂️ **Nested Navigation** - Organize docs in folders with collapsible tree structure
 - 🚀 **Fast** - Built with Next.js 16 and Turbopack
 - 📝 **MDX Support** - Write content with Markdown + React components
 - 🎨 **Customizable** - Easy to customize colors, fonts, and layout
@@ -25,13 +27,15 @@ A beautiful, feature-rich documentation template built with [Nextra](https://nex
 Click the "Use this template" button on GitHub or clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/nextra-docs-template.git my-docs
+git clone https://github.com/rcdelacruz/nextra-docs-template.git my-docs
 cd my-docs
 ```
 
 ### 2. Install Dependencies
 
 ```bash
+pnpm install
+# or
 npm install
 ```
 
@@ -61,6 +65,11 @@ content/
 ├── _meta.json          # Navigation configuration
 ├── index.mdx           # Homepage
 ├── getting-started.mdx
+├── guides/             # Nested folder example
+│   ├── _meta.json      # Nested navigation config
+│   ├── installation.mdx
+│   ├── configuration.mdx
+│   └── customization.mdx
 ├── features.mdx
 └── deployment.mdx
 ```
@@ -69,15 +78,37 @@ Update `content/_meta.json` to configure navigation:
 
 ```json
 {
-  "index": "Home",
-  "getting-started": "Getting Started",
-  "features": "Features"
+  "index": {
+    "title": "Home",
+    "type": "page"
+  },
+  "getting-started": {
+    "title": "Getting Started",
+    "type": "page"
+  },
+  "guides": {
+    "title": "Guides",
+    "type": "page"
+  }
+}
+```
+
+For nested sections, create a folder and add `_meta.json` inside it:
+
+```json
+// content/guides/_meta.json
+{
+  "installation": "Installation",
+  "configuration": "Configuration",
+  "customization": "Customization"
 }
 ```
 
 ### 5. Run Development Server
 
 ```bash
+pnpm dev
+# or
 npm run dev
 ```
 
@@ -90,11 +121,17 @@ nextra-docs-template/
 ├── app/
 │   ├── [[...mdxPath]]/      # Dynamic route handler for MDX pages
 │   ├── layout.jsx           # Root layout with navbar and footer
-│   └── globals.css          # Global styles
+│   └── globals.css          # Global styles and custom CSS
+├── components/
+│   └── ThemeToggle.jsx      # Custom theme toggle component
 ├── content/
 │   ├── _meta.json           # Navigation configuration
+│   ├── guides/              # Nested folder example
+│   │   ├── _meta.json       # Nested navigation config
+│   │   └── *.mdx            # Guide pages
 │   └── *.mdx                # Your documentation pages
-├── public/                  # Static assets (images, etc.)
+├── public/
+│   └── icon.svg             # Favicon
 ├── mdx-components.jsx       # MDX components configuration
 ├── next.config.mjs          # Next.js configuration
 ├── tailwind.config.js       # Tailwind CSS configuration
@@ -107,6 +144,8 @@ nextra-docs-template/
 
 1. **Build the site:**
    ```bash
+   pnpm build
+   # or
    npm run build
    ```
 
@@ -241,10 +280,12 @@ import { Callout } from 'nextra/components'
 ## Tips
 
 - **Search**: Generated automatically during build with Pagefind
-- **TOC**: Auto-generated from H2 and H3 headings on each page
+- **TOC**: Auto-generated from H2 and H3 headings on each page with scroll highlighting
 - **Edit Links**: Automatically added to each page (links to GitHub)
 - **Breadcrumbs**: Auto-generated based on folder structure
-- **Dark Mode**: Toggle in navbar, preference saved automatically
+- **Dark Mode**: Custom toggle button in navbar (simple light/dark switch, no dropdown)
+- **Nested Navigation**: Create folders in `content/` with `_meta.json` for collapsible sidebar sections
+- **Sticky Footer**: Footer stays at bottom of viewport, doesn't push down content
 
 ## Support
 
@@ -263,4 +304,4 @@ MIT License - feel free to use this template for any project!
 
 ---
 
-**Ready to start?** Run `npm install && npm run dev` and start building your documentation!
+**Ready to start?** Run `pnpm install && pnpm dev` and start building your documentation!
